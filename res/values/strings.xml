@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">老年人健康助手</string>
+    <string name="action_settings">Settings</string>
+    <string name="register_tip">提示\n用户名和密码由字母、数字、下划线组成，长度6-16位。其它信息如实填写有助于了解更多</string>
+    <string name="operating_details">请将血压计带在手腕处，保持表头向上，系紧绷带。先按"复位"按钮重置电子血压计，完成重置后点击"初始化"测量按钮。初始化完成再按"启动"按钮启动血压计进入测量，测量结束后给出本次诊断结论</string>
+    <string name="bloodpressure_operating_details">请将血压计带在手腕处</string>
+    <string name="bloodsugar_operating_details">请将血糖仪带在手腕处，</string>
+    <string name="heart_listen_operating_details">操作听诊器</string>
+    <string name="setting_soft">您的第一心音低而长，心尖部位声音响亮。一二之间间隔短，心尖搏动同时相。第二心音高而短，心底部位最为响亮。二一之间间隔比较长，心尖搏动呈反时相，属于正常心音。</string>
+</resources>

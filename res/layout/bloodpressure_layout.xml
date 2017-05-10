@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </TabWidget>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <!-- 定义第一个标签页的内容：血压测量 -->
+
+            <LinearLayout
+                android:id="@+id/tab01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/LeftLayout"
+                    android:layout_width="160dp"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rightLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fffffffe"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/highPressText_F"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:hint="高压"
+                        android:phoneNumber="true"
+                        android:textSize="13dp" >
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/lowPressText_F"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:hint="低压"
+                        android:phoneNumber="true"
+                        android:textSize="13dp" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/titleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="60dp"
+                        android:text="操作说明"
+                        android:textColor="#ff000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/layout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleTextView"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/text_style"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/itemTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="160dp"
+                            android:background="#00ffffff"
+                            android:text="@string/operating_details"
+                            android:textColor="#ff000000"
+                            android:textSize="13dip" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/startButton"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/layout1"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
+                        android:text="启动" />
+
+                    <Button
+                        android:id="@+id/restartButton"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/layout1"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
+                        android:text="重测" />
+
+                    <Button
+                        android:id="@+id/enterButton"
+                        android:layout_width="65dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/startButton"
+                        android:layout_marginTop="20dp"
+                        android:text="诊断" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/startButton"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/blood_press_doctor" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- 定义第二个标签页的内容:诊断结论 -->
+
+
+            <!-- 定义第三个标签页的内容:历史血压趋势图 -->
+
+            <LinearLayout
+                android:id="@+id/tab02"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00ffffff" >
+
+                    <!-- 文本一：本次测量结果 -->
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layout2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dip"
+                        android:text="本次测量结果"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- 本次测量表格3行*4列：测量项目、理想血压、本次结果 -->
+
+                    <TableLayout
+                        android:id="@+id/tablayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/text_style"
+                        android:paddingBottom="2dip"
+                        android:paddingLeft="2dip"
+                        android:paddingRight="2dip"
+                        android:paddingTop="2dip" >
+
+                        <!-- 第一行：测量项目 -->
+
+                        <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffffff" >
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="测量项目"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="收缩压(mmHg)"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="舒张压(mmHg)"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="心率(次/s)"
+                                android:textSize="12dip" />
+                        </TableRow>
+
+                        <!-- 第二行：理想血压 -->
+
+                        <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffffff" >
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="理想血压"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="150"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="70"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="70—120"
+                                android:textSize="12dip" />
+                        </TableRow>
+
+                        <!-- 第三行：本次测量血压 -->
+
+                        <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffffff" >
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="本次结果"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/showHighPressText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/showLowPressText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dip"
+                                android:layout_margin="1dip"
+                                android:background="@drawable/gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textSize="12dip" />
+                        </TableRow>
+                    </TableLayout>
+
+                    <!-- 文本二：近期血压变化趋势图 -->
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tablayout"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="近期血压变化趋势图"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- chartlayout:血压趋势图布局 -->
+
+                    <LinearLayout
+                        android:id="@+id/chartlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="260dp"
+                        android:layout_below="@+id/textView2"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/text_style"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+
+                    <!-- freshlayout:刷新布局 -->
+
+                    <LinearLayout
+                        android:id="@+id/freshlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/chartlayout"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dip" 
+                        android:orientation="horizontal"> 
+                        <Button
+                            android:id="@+id/freshDataButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="更新数据" />
+
+                        <Button
+                            android:id="@+id/freshTrendChartButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="刷新图表" />
+                    </LinearLayout>
+
+                    <!-- 本次测量血压的表格 -->
+
+                </RelativeLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

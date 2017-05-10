@@ -1,0 +1,349 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <!-- 第二个标签页：血糖变化趋势记录 -->
+                
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00ffffff" >
+
+                        <!-- 文本一：本次测量结果 -->
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentTop="true"
+                            android:text="本次测量结果"
+                            android:textSize="15dip"
+                            android:textStyle="bold" />
+
+                        <!-- 本次测量血压的表格 -->
+
+                        <TableLayout
+                            android:id="@+id/tabLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/text_style"
+                            android:paddingBottom="2dip"
+                            android:paddingLeft="2dip"
+                            android:paddingRight="2dip"
+                            android:paddingTop="2dip" >
+
+                            <!-- 第一行：测量项目 -->
+
+                            <TableRow
+                                android:id="@+id/tableRow1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffffff" >
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="测量项目"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="静脉全血(mmol/L)"
+                                    android:textSize="10dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="毛细血管(mmol/L)"
+                                    android:textSize="10dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="静脉血浆(mmol/L)"
+                                    android:textSize="10dip" />
+                            </TableRow>
+
+                            <!-- 第二行：理想血糖 -->
+
+                            <TableRow
+                                android:id="@+id/tableRow1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffffff" >
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="理想血糖"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="5.6"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="5.8"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="6.1"
+                                    android:textSize="12dip" />
+                            </TableRow>
+
+                            <!-- 第三行：糖尿病 -->
+
+                            <TableRow
+                                android:id="@+id/tableRow1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffffff" >
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="糖尿病"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text=">6.1"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text=">6.1"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text=">7.0"
+                                    android:textSize="12dip" />
+                            </TableRow>
+
+                            <!-- 第四行：本次测量血糖 -->
+
+                            <TableRow
+                                android:id="@+id/tableRow1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffffff" >
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="本次结果"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textSize="12dip" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dip"
+                                    android:layout_margin="1dip"
+                                    android:background="@drawable/gray"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textSize="12dip" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <!-- 文本二：血糖变化趋势图 -->
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tabLayout"
+                            android:layout_centerHorizontal="true"
+                            android:text="血糖变化趋势图"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <!-- 血糖变化趋势图trendChartLayout -->
+
+                        <LinearLayout
+                            android:id="@+id/trendChartLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/text_style"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+
+                        <!-- 更新数据，刷新图表按钮 -->
+
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/trendChartLayout"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dip" >
+
+                            <Button
+                                android:id="@+id/freshDataButton"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="更新数据" />
+
+                            <Button
+                                android:id="@+id/freshTrendChartButton"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="刷新图表" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dip"
+                        android:layout_margin="1dip"
+                        android:background="@drawable/gray"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dip"
+                        android:layout_margin="1dip"
+                        android:background="@drawable/gray"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="12dip" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

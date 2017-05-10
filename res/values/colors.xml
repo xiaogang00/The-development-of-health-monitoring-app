@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="title_bg">#ff54acea</color>
+    <color name="login_background">#ffecf6fb</color>
+    <color name="login_color0">#ffe2e7eb</color>
+    <color name="login_color1">#ffffffff</color>
+    <color name="textfield_unselected">#ffb3cad9</color>
+    <color name="button_unselected">#ff54acea</color>
+    <color name="button_selected">#ff419de4</color>
+    <color name="white">#fffffffe</color>
+    <color name="black">#ff000000</color>
+</resources>

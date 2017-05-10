@@ -1,0 +1,354 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <!-- 第一个标签页：血糖测量 -->
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00ffffff" >
+
+                        <!-- 文本一：提示向导标题 -->
+
+                        <TextView
+                            android:id="@+id/titleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="请按提示向导逐步操作"
+                            android:textSize="18dip"
+                            android:textStyle="bold" />
+
+                        <!-- 文本二：提示向导内容 -->
+
+                        <LinearLayout
+                            android:id="@+id/layout1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dip"
+                            android:layout_below="@+id/titleTextView"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="30dip"
+                            android:layout_marginTop="5dip"
+                            android:background="@drawable/text_style"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/itemTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#00ffffff"
+                                android:text="首先清洁双手，用干净毛巾或纸巾擦干；来回搓动双手，使双手血液循环畅通；选定采血手指，建议选择无名指，因为相较食指或中指，无名指疼痛感较小,准备采血.完成后按下一步。"
+                                android:textSize="16dip" />
+                        </LinearLayout>
+
+                        <!-- 测量布局 -->
+
+                        <RelativeLayout
+                            android:id="@+id/layout2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/layout1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/glucometer_background" >
+
+                            <Button
+                                android:id="@+id/startButton"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:text="启动" />
+
+                            <Button
+                                android:id="@+id/restartButton"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="重测" />
+
+                            <Button
+                                android:id="@+id/enterButton"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentTop="true"
+                                android:text="诊断" />
+
+                            <!-- 模拟血糖仪：同排两个按钮 -->
+
+                            <LinearLayout
+                                android:id="@+id/customGlucometerLayout"
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical" >
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/inputVBGText"
+                                android:layout_width="80dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:ems="10"
+                                android:hint="静脉全血">
+                            </EditText>
+                            
+                            <EditText
+                                android:id="@+id/inputFPGText"
+                                android:layout_width="80dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:hint="静脉血浆">
+                            </EditText>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!-- 第二个标签页：历史血糖记录 -->
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ffffff" >
+
+        <!-- 文本一：本次测量结果 -->
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="本次测量结果"
+            android:textSize="15dip"
+            android:textStyle="bold" />
+
+        <!-- 本次测量血压的表格 -->
+
+        <TableLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/text_style"
+            android:paddingBottom="2dip"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:paddingTop="2dip" >
+
+            <!-- 第一行：测量项目 -->
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffffff" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="测量项目"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="静脉全血(mg/dL)"
+                    android:textSize="10dip" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="静脉血浆(mg/dL)"
+                    android:textSize="10dip" />
+            </TableRow>
+
+
+            <!-- 第二行：糖尿病 -->
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffffff" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="糖尿病"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text=">120"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text=">140"
+                    android:textSize="12dip" />
+            </TableRow>
+
+            <!-- 第三行：本次测量血糖 -->
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffffff" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="本次结果"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/measureVBGText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/measureFPGText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/gray"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="12dip" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- 文本二：血糖变化趋势图 -->
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tabLayout"
+            android:layout_centerHorizontal="true"
+            android:text="空腹血糖变化趋势图"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <!-- 血糖变化趋势图trendChartLayout -->
+
+        <LinearLayout
+            android:id="@+id/chartLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="570px"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/text_style"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <!-- 更新数据，刷新图表按钮 -->
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/chartLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dip" >
+
+            <Button
+                android:id="@+id/freshDataButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="更新数据" />
+
+            <Button
+                android:id="@+id/freshTrendChartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="刷新图表" />
+        </LinearLayout>
+    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
